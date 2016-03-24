@@ -1,0 +1,7 @@
+
+   Notes about application
+   * Notice that the behavior of the window when sizing is the same for
+     bottom-left and top-right. This is accomplished by subclassing the frame
+     and intercepting the WM_TRACKFRAME message and checking which borders are
+     being tracked.
+

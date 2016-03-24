@@ -1,0 +1,72 @@
+
+   #1 FCF_NOBYTALIGN
+      Begin frame tracking is monitored by the application to do some fancy
+      adjustments to the scrollbars when window is resized using left and
+      bottom frame borders. Normally, without the FCF_NOBYTEALIGN flag, frame
+      windows are 8 pel aligned (horizontally only) on screen. Without the
+      FCF_NOBYTEALIGN the fancy scrollbar trick doesn't look quite right,
+      therefor, this application uses the FCF_NOBYTEALIGN flah when creating
+      the frame. Another work around is to intercept the WM_QUERYTRACKINFO in
+      the frame sub proc. and set the ptrackinfo->cxGrid parameter to 8.
+
+   #2 Scrollbar handles
+      Normally, a frame control handle is queried through WinWindowFromID(),
+      but that call requires the parent of the contol window to be the frame
+      window. Since the scrollbars shouldn't be visible at application startup
+      they are created with parent set to HWND_OBJECT, which makes them
+      invisible but also makes it impossible to use the WinWindowFromID() call
+      to query the scrollbar handles. The scrollbar windows are created in the
+      function which subclasses the frame window, so the sub proc. is used to
+      get the scrollbar handles.
+
+   #3 Message removal
+      Some messages (such as scrollbar tracking messages) only need the latest
+      available message in the queue. Using WinPeekMsg() a developer can
+      remove messages from the queue.
+      NOTA BENE: Although WinPeekMsg() simply returns FALSE when no more
+                 (filtered) messages are available in the queue, the QMSG
+                 structure used BECOMES UNDEFINED. This means that if you wish
+                 to guarentee that the parameters are intact you need to use
+                 a temporary QMSG structure.
+
+      Sample 1 - No message parameters needed:
+         QMSG qmsg;
+
+         [...]
+      
+         while(WinPeekMsg(hab, &qmsg, NULLHANDLE, WMU_UPDATE, WMU_UPDATE,
+               PM_REMOVE))
+         {
+         }
+         /* At this point, although you know that the last message peeked was
+            a WMU_UPDATED message, the qmsg structure must be considered
+            broken! */
+
+      Sample 2 - Message parameters are needed:
+         QMSG qmsg;
+         QMSG q2;
+
+         [...]
+      
+         while(WinPeekMsg(hab, &q2, NULLHANDLE, WM_MOUSEMOVE, WM_MOUSEMOVE,
+               PM_REMOVE))
+         {
+            memcpy(&qmsg, &q2, sizeof(QMSG));
+         }
+         /* At this point the qmsg contains the last available message
+            structure with all parameters intact */
+
+   #4 Changing visible area when tracking left and/or bottom frame border
+      Without implementing a special trick, tracking the left and bottom frame
+      borders does not affect the client area the same way as tracking the
+      right an top frames. When tracking left and bottom frames, the scrollbar
+      positions stay the same (i.e if the vertical scrollbar's position is 42
+      before tracking the left border, it will remain 42 after the frame
+      tracking is complete.). This application implements the same behavior
+      for the left and bottom frame borders as for the right and top frame
+      borders.
+      Nota bene: Since window sizing isn't done the same way with "Full Window
+                 Dragging" enabled in the System properties notebook, this
+                 trick does not work unless "Full Window Dragging" is
+                 disabled.
+

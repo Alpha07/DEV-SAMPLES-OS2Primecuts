@@ -1,0 +1,16 @@
+
+   PM Debug Terminal
+
+   The basic idea with this application is to provide a convinient method to
+   debug PM applications and VIO applications where you do not want to clutter
+   the screen with debug strings. The stdout handle from the application you
+   want to debug is passed along to the DebugTerminal application which reads
+   that stream and displays & logs anything written to it.
+
+   The technique is described in the OS/2 Warp toolkit.
+
+
+   Compile this application, and copy it to a directory along your
+   path-environment. Next, enter the "sample" directory" and build & run that
+   project to see it in action.
+

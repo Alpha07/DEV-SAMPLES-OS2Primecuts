@@ -1,0 +1,13 @@
+#include <os2.h>
+
+#include "resources.h"
+
+ICON WIN_APPFRAME FrameWindowTricks.ico
+
+
+STRINGTABLE LOADONCALL
+{
+   IDS_APPTITLE                          "Frame Window Tricks"
+   IDS_WELCOME_MESSAGE                   "Welcome to the Frame Window Tricks application"
+}
+

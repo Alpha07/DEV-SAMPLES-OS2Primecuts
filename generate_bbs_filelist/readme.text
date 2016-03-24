@@ -1,0 +1,12 @@
+
+   This application will generate a file list formatted for BBS use, such as a
+   allfiles.lst file used on many Fidonet BBS:s. It scans all subdirectories
+   under a user-specified base directory and uses the files's .COMMENTS
+   extended attribute as file description. Also, it uses the .LONGNAME
+   attribute for area names.
+
+   Since extended attributes aren't supported on CD:s, you won't achive
+   satisfying results if you specify a CD directory as base directory.
+   However, it's not hard to add support for the EA buffers extraced by
+   EAUTIL.
+

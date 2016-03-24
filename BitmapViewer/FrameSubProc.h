@@ -1,0 +1,4 @@
+
+#define WMU_QUERY_SCROLLBAR_HANDLES      WM_USER+0x0102
+
+

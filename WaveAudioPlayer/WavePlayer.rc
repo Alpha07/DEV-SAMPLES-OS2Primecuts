@@ -1,0 +1,13 @@
+#include <os2.h>
+
+#include "res.h"
+
+ICON WIN_MAIN  WavePlayer.Ico
+
+STRINGTABLE
+{
+   IDS_APPNAME                           "WavePlayer 1.0"
+   IDS_CLIENTCLASSNAME                   "MainWindowClientClass"
+   IDS_VOLUME                            "Volume"
+}
+

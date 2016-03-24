@@ -1,0 +1,14 @@
+#include <os2.h>
+
+#include "resource.h"
+
+ICON WIN_MAIN TestApplication.ico
+
+STRINGTABLE LOADONCALL
+{
+   IDS_APPTITLE                          "Test Application"
+   IDS_CLIENTCLASS                       "ClientClassName"
+   IDS_BUTTON1                           "Random color"
+   IDS_BUTTON2                           "Random gray"
+}
+

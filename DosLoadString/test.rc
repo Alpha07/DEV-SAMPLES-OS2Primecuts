@@ -1,0 +1,6 @@
+#include "res.h"
+
+STRINGTABLE
+{
+   IDS_APPNAME       "My Application"
+}

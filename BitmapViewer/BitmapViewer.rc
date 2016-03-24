@@ -1,0 +1,63 @@
+#include <os2.h>
+
+#include "resources.h"
+
+
+ICON WIN_APPFRAME BitmapViewer.ico
+
+POINTER PTR_CROSSHAIR Crosshair.ptr
+
+STRINGTABLE LOADONCALL
+{
+   IDS_APPTITLE                          "Bitmap Viewer 2000-06-26"
+   IDS_CANVASCLASS                       "CanvasWndClass"
+                                       /* 1234567890123456789012345678901234567890 */
+   IDS_POSTWRKRERRORTITLE                "Post worker thread message failed"
+}
+
+
+MENU WIN_APPFRAME LOADONCALL
+{
+   SUBMENU "~File", IDM_FILE, MIS_TEXT, MIA_DISABLED
+   {
+      MENUITEM "~Load\tCrtl-l", IDM_FILE_LOAD, MIS_TEXT, MIA_DISABLED
+   }
+   SUBMENU "~Options", IDM_OPTIONS, MIS_TEXT, MIA_DISABLED
+   {
+      SUBMENU "Bitmap alignment", IDM_OPT_ALIGN, MIS_TEXT, MIA_DISABLED
+      {
+         SUBMENU "~Horizontal", IDM_OPT_ALIGN_HORZ, MIS_TEXT, MIA_DISABLED
+         {
+            MENUITEM "Left", IDM_OPT_ALIGN_HORZ_LEFT, MIS_TEXT, MIA_DISABLED
+            MENUITEM "Center", IDM_OPT_ALIGN_HORZ_CENTER, MIS_TEXT, MIA_DISABLED
+            MENUITEM "Right", IDM_OPT_ALIGN_HORZ_RIGHT, MIS_TEXT, MIA_DISABLED
+         }
+         SUBMENU "~Vertical", IDM_OPT_ALIGN_VERT, MIS_TEXT, MIA_DISABLED
+         {
+            MENUITEM "Top", IDM_OPT_ALIGN_VERT_TOP, MIS_TEXT, MIA_DISABLED
+            MENUITEM "Center", IDM_OPT_ALIGN_VERT_CENTER, MIS_TEXT, MIA_DISABLED
+            MENUITEM "Bottom", IDM_OPT_ALIGN_VERT_BOTTOM, MIS_TEXT, MIA_DISABLED
+         }
+      }
+   }
+   SUBMENU "~Help", IDM_HELP
+   {
+      MENUITEM "~About", IDM_HELP_ABOUT
+   }
+}
+
+
+ACCELTABLE WIN_APPFRAME LOADONCALL
+{
+   "l", IDM_FILE_LOAD, CONTROL
+}
+
+
+MESSAGETABLE LOADONCALL
+{
+   IDMSG_POSTQUITMSGFAILED               "The UI thread failed when attempting to post a quit message\n"\
+"to the worker thread.\n"\
+"ABORT will abort the shutdown procedure, RETRY retries the post\n"\
+"operation and IGNORE will force a shutdown."
+}
+

@@ -1,0 +1,6 @@
+NAME DosLoadStringTest WINDOWCOMPAT
+
+DESCRIPTION 'Demonstrates how to load resourcestrings using the CP API'
+
+STACKSIZE 16384
+

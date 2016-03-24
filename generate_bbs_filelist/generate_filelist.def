@@ -1,0 +1,6 @@
+NAME generate_filelist WINDOWCOMPAT
+
+DESCRIPTION 'BBS filelist generator'
+
+STACKSIZE 16384
+

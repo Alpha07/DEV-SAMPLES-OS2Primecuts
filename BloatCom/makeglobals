@@ -1,0 +1,13 @@
+
+BACKUP_FILES = *.c *.h makefile makeglobals *.def
+
+OBJS = $(BASENAME).obj
+
+$(BASENAME).obj: ..\$(@B).c ..\$(@B).h
+
+
+successful_build:
+   %cd ..
+   @detach pkzip /add /directories /recurse /silent last_successful_build $(BACKUP_FILES)
+   @detach pkzip /add /directories /recurse /silent d:\Backup\Development\$(BASENAME)_successful_build_$(DATE) $(BACKUP_FILES)
+

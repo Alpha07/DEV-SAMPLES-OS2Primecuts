@@ -1,0 +1,6 @@
+NAME BitmapViewer WINDOWAPI
+
+DESCRIPTION 'A little bitmap viewer'
+
+STACKSIZE 65536
+

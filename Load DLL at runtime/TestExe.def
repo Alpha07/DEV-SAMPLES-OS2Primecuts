@@ -1,0 +1,6 @@
+NAME TESTEXE WINDOWCOMPAT
+
+DESCRIPTION 'Runtime DLL loading test executable'
+
+STACKSIZE 32768
+

@@ -1,0 +1,58 @@
+
+   The OS/2 Primecuts
+   2000-08-26
+
+   1. INTRODUCTION
+   2. FINDING WHAT YOU ARE LOOKING FOR
+   3. WHERE TO FIND THE LATEST RELEASE
+   4. LICENSE - WHAT YOU MAY, AND WHAT YOU MAY NOT
+   5. WHO TO CONTACT
+
+
+   1. INTRODUCTION
+   ===============
+   "The OS/2 Primecuts" is a collection of source codes/snippets for OS/2. The
+   main goals with this package is to help beginner developers learn OS/2
+   specific programming, helping more expereinced developers get inspiration
+   and some new ideas.
+   Anyone can contribute!
+
+
+   2. FINDING WHAT YOU ARE LOOKING FOR
+   ===================================
+   If you need to find information on a specific task, use the WPS "Find"
+   function. The files/folders should contain full descriptions and have
+   relevant keywords set in the extended attributes.
+   To browse that information, simply open the file/folder properties and jump
+   to the "File"-page and go to page 3 (in Warp4).
+
+
+   3. WHERE TO FIND THE LATEST RELEASE
+   ===================================
+   WWW: http://w1.246.telia.com/~u24602843/
+
+
+   4. LICENSE - WHAT YOU MAY, AND WHAT YOU MAY NOT
+   ===============================================
+   You may:
+   * Use the sourcecodes supplied for any commercial or noncommercial product.
+   * Spread the original unmodified 'OS/2 Primecuts' archive.
+
+   You may not:
+   * Hold any of the contributers liable for any damage the samples may cause.
+   * Spread unmodified sources in your name.
+   * Redistribute a modified 'OS/2 Primecuts'-archive. You may use the
+     sources, but you may not repack the sources and release the archive
+     as 'The OS/2 Primecuts'. If you wish to add code, modify code or delete
+     code, send the source/information to me, and I will incorporate the
+     changes in the 'official' release instead.
+     I am not a control freak, I simply don't want any confusion about which
+     version is the one I can support.
+
+
+   5. WHO TO CONTACT
+   =================
+   Jan M. Danielsson at any of the following:
+   Internet e-mail: os2@telia.com
+           Fidonet: 2:205/323.0
+

@@ -1,0 +1,35 @@
+LIBRARY BloatCom
+
+DESCRIPTION 'A asynchronous communications library'
+
+EXPORTS
+   comOpen                             @100
+   comClose                            @101
+   comAquireFromHandle                 @102
+   comDeaquireAccess                   @103
+   comSetBaudrate                      @110
+   comSetLineControl                   @111
+   comCarrier                          @112
+   comLowerDTR                         @113
+   comRaiseDTR                         @114
+   comHangup                           @115
+   comRead                             @200
+   comReadBuffer                       @201
+   comWrite                            @202
+   comWriteBuffer                      @203
+   comReadChar                         @204
+   comPeekChar                         @205
+   comReadCharWait                     @206
+   comFlushTransmitBuffer              @250
+   comWaitForEvent                     @251
+   comWaitFor                          @252
+   comReadWait                         @253
+   comMonitorCarrier                   @300
+   queryInDataAvailableSemHandle       @350
+   queryCarrierLostSemHandle           @351
+   init_timer                          @800
+   term_timer                          @801
+   start_timer                         @802
+   stop_timer                          @803
+   timeout                             @804
+

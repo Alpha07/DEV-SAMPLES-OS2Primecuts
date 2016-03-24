@@ -1,0 +1,65 @@
+#include <os2.h>
+
+#include <res.h>
+
+
+ICON WIN_APPFRAME DebugTerminal.ico
+
+STRINGTABLE LOADONCALL
+{
+   IDS_APPTITLE                          "Debug Terminal"
+}
+
+
+MENU WIN_APPFRAME LOADONCALL
+{
+   SUBMENU "~Terminal", IDM_TERMINAL
+   {
+      MENUITEM "~About", IDM_TERMINAL_ABOUT
+      MENUITEM SEPARATOR
+      MENUITEM "~Clear\tAlt-z", IDM_TERMINAL_CLEAR
+      MENUITEM SEPARATOR
+      MENUITEM "E~xit\tAlt-F4", IDM_TERMINAL_EXIT
+   }
+   SUBMENU "~Options", IDM_OPTIONS
+   {
+      MENUITEM "~Log..", IDM_OPTIONS_LOG
+      MENUITEM SEPARATOR
+      MENUITEM "~Save window position", IDM_OPTIONS_SAVEWINPOS
+   }
+}
+
+ACCELTABLE WIN_APPFRAME LOADONCALL
+{
+   VK_F3, IDM_TERMINAL_EXIT, VIRTUALKEY
+   "z", IDM_TERMINAL_CLEAR, CONTROL
+}
+
+
+
+DLGTEMPLATE DLG_LOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Log File", DLG_LOG, 68, 56, 140, 56, WS_VISIBLE | NOT WS_SAVEBITS, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        AUTOCHECKBOX    "~Write stream to Log File", CB_USE_LOG, 4, 40, 132, 10
+        RTEXT           "Log File", -1, 4, 24, 40, 12, DT_VCENTER
+        ENTRYFIELD      "DebugTerminal.log", EF_LOGFILE, 50, 26, 84, 8, ES_MARGIN
+        DEFPUSHBUTTON   "~Ok", DID_OK, 4, 4, 40, 12
+        PUSHBUTTON      "~Cancel", DID_CANCEL, 48, 4, 40, 12
+    END
+END
+
+DLGTEMPLATE DLG_ABOUT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "About Debug Terminal", DLG_ABOUT, 48, 16, 192, 120, WS_VISIBLE | NOT WS_SAVEBITS, FCF_TITLEBAR
+    BEGIN
+        CTEXT           "Debug Terminal", -1, 52, 104, 136, 8, DT_VCENTER
+        CTEXT           "fÅr", -1, 52, 92, 136, 8, DT_VCENTER
+        CTEXT           "Application Debugging", -1, 52, 80, 136, 8, DT_VCENTER
+        LTEXT           "Developed by", -1, 4, 56, 184, 8
+        LTEXT           "Jan M. Danielsson (os2@telia.com)", -1, 4, 48, 184, 8
+        CTEXT           "Winners do not use drugs", -1, 4, 28, 184, 8, DT_VCENTER PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+        DEFPUSHBUTTON   "OK", DID_OK, 72, 4, 40, 12
+        ICON            WIN_APPFRAME, -1, 24, 88, 20, 16, WS_GROUP
+    END
+END

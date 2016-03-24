@@ -1,0 +1,6 @@
+NAME PMApplication WINDOWAPI
+
+DESCRIPTION 'Debug terminal PM test application'
+
+STACKSIZE 65536
+

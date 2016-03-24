@@ -1,0 +1,6 @@
+NAME WavePlayer WINDOWAPI
+
+DESCRIPTION 'AudioWavePlayer 1.0'
+
+STACKSIZE 65535
+

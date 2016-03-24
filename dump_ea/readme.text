@@ -1,0 +1,28 @@
+
+   Extended attributes are a large part of OS/2. They can be used to organize
+   your work and thereby increase your productivity. EA:s can also be used
+   internally by applications to store data file information. The WPS uses
+   extended attributes for all file system objects to store object data.
+
+   Although extended attributes are a vital part of WPS, and can help you
+   manage your desktop and files, some extended attributes cause can problems
+   when being moved to another system.
+
+   For instance:
+      .ASSOCTABLE
+      .CLASSINFO
+      .PREVNAME
+
+   Less critical, but which are known to create annoyances:
+      .ICONPOS
+      .LONGNAME
+
+   A utility called EAUTIL is shipped with OS/2 which can help you to strip,
+   extract, apply and merge extended attributes. The only thing missing is a
+   way to filter out extended attributes you don't want to extract.
+
+   dump_ea does just that. It stores a file's extended atttibutes in a file
+   format understood by OS/2's EAUTIL. However, dump_ea can only extract the
+   EA:s - not reapply them. When you have dumped the EA data, simply use
+   EAUTIL to reapply the extended attributes to the data file.
+

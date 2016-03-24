@@ -1,0 +1,7 @@
+NAME DebugTerminal WINDOWAPI
+
+DESCRIPTION 'PM Debug Terminal'
+
+STACKSIZE 65536
+
+

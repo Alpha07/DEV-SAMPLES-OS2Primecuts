@@ -1,0 +1,23 @@
+
+
+   Some general OS/2 guidelines
+   ============================
+   * If you don't have any portability demands, use the OS/2 API as much as
+     possible since it's what this archive is all about.
+
+
+   PM guidelines
+   =============
+   * Never intercept any messages you don't really, really need to handle. A
+     good rule is to pass as much as possible on to WinDefWindowProc() or the
+     old procedure (when writing a subclass procedure).
+   * Keep only one window procedure in each source file, and declate the
+     functions associated with it as static.
+
+
+   WPS guidelines
+   ==============
+   * Do not override more methods than you really, really must override. Keep
+     it as simple as possible.
+
+
